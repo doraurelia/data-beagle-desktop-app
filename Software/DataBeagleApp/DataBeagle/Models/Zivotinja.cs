@@ -14,7 +14,7 @@ namespace DataBeagle.Models
         public bool udomljena {  get; set; }
         public DateTime datumRodjenja {  get; set; }
         public DateTime datumDolaska { get; set; }
-        public DateTime datumUdomljenja { get; set; }
+        public DateTime? datumUdomljenja { get; set; }
         public string oibUdomitelj {  get; set; }
     }
 }
