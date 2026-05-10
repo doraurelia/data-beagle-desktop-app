@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvZivotinje = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnIzmijeni = new System.Windows.Forms.Button();
             this.btnBrisi = new System.Windows.Forms.Button();
             this.filterVrsta = new System.Windows.Forms.ComboBox();
             this.btnFiltriraj = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,13 +48,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Životinje u skloništu";
             // 
-            // dataGridView1
+            // dgvZivotinje
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvZivotinje.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvZivotinje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZivotinje.Location = new System.Drawing.Point(32, 77);
+            this.dgvZivotinje.Name = "dgvZivotinje";
+            this.dgvZivotinje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvZivotinje.Size = new System.Drawing.Size(240, 150);
+            this.dgvZivotinje.TabIndex = 1;
             // 
             // btnNovo
             // 
@@ -117,12 +120,12 @@
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnIzmijeni);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvZivotinje);
             this.Controls.Add(this.label1);
             this.Name = "FormaZaPregledZivotinja";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormaZaPregledZivotinja_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +134,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvZivotinje;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnIzmijeni;
         private System.Windows.Forms.Button btnBrisi;

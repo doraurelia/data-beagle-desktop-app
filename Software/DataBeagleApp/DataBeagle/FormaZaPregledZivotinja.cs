@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataBeagle.Models;
+using DataBeagle.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +32,13 @@ namespace DataBeagle
 
         private void FormaZaPregledZivotinja_Load(object sender, EventArgs e)
         {
+            PrikaziZivotinje();
+        }
 
+        private void PrikaziZivotinje()
+        {
+            List<Zivotinja> zivotinje = RepozitorijZivotinja.GetZivotinje();
+            dgvZivotinje.DataSource= zivotinje;
         }
 
         private void btnIzmijeni_Click(object sender, EventArgs e)

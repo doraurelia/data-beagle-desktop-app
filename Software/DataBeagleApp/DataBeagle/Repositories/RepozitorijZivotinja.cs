@@ -54,7 +54,7 @@ namespace DataBeagle.Repositories
             bool Udomljena = bool.TryParse(reader["Udomljena"].ToString(), out bool udomljena);
             DateTime? DatumUdomljenja = null;
             string OibUdomitelja = null;
-            //treba još vrstu dohvatiti
+            Vrsta vrstaZivotinje = RepozitorijVrsta.GetVrsta(int.Parse(reader["ID_vrsta"].ToString()));
             if (Udomljena)
             {
                 DatumUdomljenja = DateTime.Parse(reader["Datum_udomljenja"].ToString());
@@ -65,8 +65,7 @@ namespace DataBeagle.Repositories
             {
                 id = Id,
                 ime = ImeZivotinje,
-                //vrstu treba dodati
-                vrsta = null,
+                vrsta = vrstaZivotinje,
                 udomljena = Udomljena,
                 datumDolaska = DatumDolaska,
                 datumRodjenja = DatumRodjenja,
