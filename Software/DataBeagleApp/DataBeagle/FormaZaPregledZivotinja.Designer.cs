@@ -1,6 +1,6 @@
 ﻿namespace DataBeagle
 {
-    partial class Form1
+    partial class FormaZaPregledZivotinja
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(243, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Životinje u skloništu";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -66,6 +65,7 @@
             this.btnNovo.TabIndex = 2;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnIzmijeni
             // 
@@ -76,6 +76,7 @@
             this.btnIzmijeni.TabIndex = 3;
             this.btnIzmijeni.Text = "Izmijeni";
             this.btnIzmijeni.UseVisualStyleBackColor = true;
+            this.btnIzmijeni.Click += new System.EventHandler(this.btnIzmijeni_Click);
             // 
             // btnBrisi
             // 
@@ -106,7 +107,7 @@
             this.btnFiltriraj.Text = "Filtriraj";
             this.btnFiltriraj.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FormaZaPregledZivotinja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +119,9 @@
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FormaZaPregledZivotinja";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormaZaPregledZivotinja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
