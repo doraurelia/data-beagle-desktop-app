@@ -10,7 +10,7 @@ namespace DataBeagle.Models
     {
         public int id {  get; set; }
         public string ime { get; set; }
-        //atibut za vrstu
+        public Vrsta vrsta { get; set; }
         public bool udomljena {  get; set; }
         public DateTime datumRodjenja {  get; set; }
         public DateTime datumDolaska { get; set; }

@@ -62,6 +62,7 @@
     <Compile Include="FormaUnosIzmjena.Designer.cs">
       <DependentUpon>FormaUnosIzmjena.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Vrsta.cs" />
     <Compile Include="Models\Zivotinja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
