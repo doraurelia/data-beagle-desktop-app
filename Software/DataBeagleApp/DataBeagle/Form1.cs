@@ -16,5 +16,15 @@ namespace DataBeagle
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterVrsta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
