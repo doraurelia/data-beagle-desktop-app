@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBeagle.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,15 +25,43 @@ namespace DataBeagle
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if (dtpDatumDolaska.Value < dtpDatumRodjenja.Value || dtpDatumDolaska.Value > dtpDatumUdomljenja.Value || dtpDatumUdomljenja.Value < dtpDatumRodjenja.Value)
+            if (dtpDatumDolaska.Value < dtpDatumRodjenja.Value ||
+                dtpDatumDolaska.Value > dtpDatumUdomljenja.Value ||
+                dtpDatumUdomljenja.Value < dtpDatumRodjenja.Value //provjeri još da ako je udomljena budu uneseni i datum i udomitelj
+                )
             {
                 //ne dopusti unos
-            }else
+            }
+            else
             {
                 //spremi podatke u bazu
                 //osvježi formu za pregled
             }
-           
+
+        }
+
+        private void cmbxUdomitelj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUdomitelj_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormaUnosIzmjena_Load(object sender, EventArgs e)
+        {
+            cmbxUdomljena.DataSource = new List<string>
+            {
+                "Ne",
+                "Da"
+            }; //pazi kod spremanja da se spremi bool ne string
         }
     }
 }
