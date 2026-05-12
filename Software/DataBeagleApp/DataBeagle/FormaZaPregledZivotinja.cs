@@ -49,8 +49,13 @@ namespace DataBeagle
 
         private void btnIzmijeni_Click(object sender, EventArgs e)
         {
-            FormaUnosIzmjena formaUnosIzmjena = new FormaUnosIzmjena();
-            formaUnosIzmjena.ShowDialog();
+            if (dgvZivotinje.SelectedRows != null) {
+                var odabranaZivotinja = dgvZivotinje.SelectedRows[0].DataBoundItem as Zivotinja;
+                FormaUnosIzmjena formaUnosIzmjena = new FormaUnosIzmjena(odabranaZivotinja);
+                formaUnosIzmjena.ShowDialog(); 
+            }
+        
+        
         }
 
         private void dgvZivotinje_CellContentClick(object sender, DataGridViewCellEventArgs e)

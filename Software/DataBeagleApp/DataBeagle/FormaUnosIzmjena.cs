@@ -1,4 +1,5 @@
-﻿using DataBeagle.Repositories;
+﻿using DataBeagle.Models;
+using DataBeagle.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,23 @@ namespace DataBeagle
 {
     public partial class FormaUnosIzmjena : Form
     {
+        private Zivotinja zivotinja;
         public FormaUnosIzmjena()
         {
             InitializeComponent();
+        }
+
+        public FormaUnosIzmjena(Zivotinja odabranaZivotinja)
+        {
+            InitializeComponent();
+            zivotinja= odabranaZivotinja;
+            txtIme.Text = zivotinja.ime;
+            cmbxUdomljena.DisplayMember = zivotinja.udomljena ? "Da" : "Ne";
+            txtUdomitelj.Text = zivotinja.oibUdomitelj;
+            dtpDatumDolaska.Value = zivotinja.datumDolaska;
+            dtpDatumRodjenja.Value = zivotinja.datumRodjenja;
+            //trebam stavit datum udomljenja kao tekst bolje?
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
