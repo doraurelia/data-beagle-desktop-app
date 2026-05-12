@@ -111,13 +111,14 @@
             // btnFiltriraj
             // 
             this.btnFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFiltriraj.Location = new System.Drawing.Point(1089, 15);
+            this.btnFiltriraj.Location = new System.Drawing.Point(1089, 10);
             this.btnFiltriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiltriraj.Name = "btnFiltriraj";
             this.btnFiltriraj.Size = new System.Drawing.Size(112, 36);
             this.btnFiltriraj.TabIndex = 6;
             this.btnFiltriraj.Text = "Filtriraj";
             this.btnFiltriraj.UseVisualStyleBackColor = true;
+            this.btnFiltriraj.Click += new System.EventHandler(this.btnFiltriraj_Click);
             // 
             // FormaZaPregledZivotinja
             // 

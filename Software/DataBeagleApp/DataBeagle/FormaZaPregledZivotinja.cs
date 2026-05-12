@@ -52,5 +52,13 @@ namespace DataBeagle
         {
 
         }
+
+        private void btnFiltriraj_Click(object sender, EventArgs e)
+        {
+            if (cbxFilterVrsta.SelectedValue != null)
+            {
+
+            }
+        }
     }
 }
