@@ -47,8 +47,8 @@ namespace DataBeagle.Repositories
 
         public static List <Zivotinja> GetZivotinjeFilter(int idVrsta)
         {
-            List<Zivotinja> zivotinje = null;
-            string sql = $"SELECT * FROM Zivotinja WHERE ID_vrsta == {idVrsta}";
+            List<Zivotinja> zivotinje = new List<Zivotinja>();
+            string sql = $"SELECT * FROM Zivotinja WHERE ID_vrsta = {idVrsta}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())

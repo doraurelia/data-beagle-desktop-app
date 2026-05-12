@@ -33,7 +33,12 @@ namespace DataBeagle
         private void FormaZaPregledZivotinja_Load(object sender, EventArgs e)
         {
             PrikaziZivotinje();
-            cbxFilterVrsta.DataSource = RepozitorijVrsta.GetVrste();
+            List<Vrsta> vrste = new List<Vrsta>();
+            vrste = RepozitorijVrsta.GetVrste();
+            vrste.Insert(0, new Vrsta { id = 0, naziv = "--- Sve vrste ---" });
+            cbxFilterVrsta.DataSource = vrste;
+            cbxFilterVrsta.DisplayMember = "naziv"; 
+            cbxFilterVrsta.ValueMember = "id";     
         }
 
         private void PrikaziZivotinje()
@@ -57,7 +62,20 @@ namespace DataBeagle
         {
             if (cbxFilterVrsta.SelectedValue != null)
             {
-
+                if ((int)cbxFilterVrsta.SelectedValue != 0) 
+                {
+                    dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinjeFilter((int)cbxFilterVrsta.SelectedValue);
+                    
+                }
+                else
+                {
+                    dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
+                }
+               
+            }
+            else
+            {
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
             }
         }
     }
