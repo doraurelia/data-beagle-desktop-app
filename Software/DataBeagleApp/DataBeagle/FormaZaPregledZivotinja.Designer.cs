@@ -33,7 +33,7 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnIzmijeni = new System.Windows.Forms.Button();
             this.btnBrisi = new System.Windows.Forms.Button();
-            this.filterVrsta = new System.Windows.Forms.ComboBox();
+            this.cbxFilterVrsta = new System.Windows.Forms.ComboBox();
             this.btnFiltriraj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).BeginInit();
             this.SuspendLayout();
@@ -42,9 +42,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 29);
+            this.label1.Size = new System.Drawing.Size(299, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Životinje u skloništu";
             // 
@@ -53,18 +54,22 @@
             this.dgvZivotinje.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvZivotinje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvZivotinje.Location = new System.Drawing.Point(32, 77);
+            this.dgvZivotinje.Location = new System.Drawing.Point(13, 95);
+            this.dgvZivotinje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvZivotinje.Name = "dgvZivotinje";
+            this.dgvZivotinje.RowHeadersWidth = 51;
             this.dgvZivotinje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvZivotinje.Size = new System.Drawing.Size(240, 150);
+            this.dgvZivotinje.Size = new System.Drawing.Size(1188, 397);
             this.dgvZivotinje.TabIndex = 1;
+            this.dgvZivotinje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZivotinje_CellContentClick);
             // 
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNovo.Location = new System.Drawing.Point(17, 406);
+            this.btnNovo.Location = new System.Drawing.Point(13, 500);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(89, 32);
+            this.btnNovo.Size = new System.Drawing.Size(119, 39);
             this.btnNovo.TabIndex = 2;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -73,9 +78,10 @@
             // btnIzmijeni
             // 
             this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIzmijeni.Location = new System.Drawing.Point(112, 406);
+            this.btnIzmijeni.Location = new System.Drawing.Point(139, 500);
+            this.btnIzmijeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIzmijeni.Name = "btnIzmijeni";
-            this.btnIzmijeni.Size = new System.Drawing.Size(101, 33);
+            this.btnIzmijeni.Size = new System.Drawing.Size(135, 41);
             this.btnIzmijeni.TabIndex = 3;
             this.btnIzmijeni.Text = "Izmijeni";
             this.btnIzmijeni.UseVisualStyleBackColor = true;
@@ -84,44 +90,48 @@
             // btnBrisi
             // 
             this.btnBrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBrisi.Location = new System.Drawing.Point(219, 406);
+            this.btnBrisi.Location = new System.Drawing.Point(282, 500);
+            this.btnBrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBrisi.Name = "btnBrisi";
-            this.btnBrisi.Size = new System.Drawing.Size(93, 33);
+            this.btnBrisi.Size = new System.Drawing.Size(124, 41);
             this.btnBrisi.TabIndex = 4;
             this.btnBrisi.Text = "Obriši";
             this.btnBrisi.UseVisualStyleBackColor = true;
             // 
-            // filterVrsta
+            // cbxFilterVrsta
             // 
-            this.filterVrsta.FormattingEnabled = true;
-            this.filterVrsta.Location = new System.Drawing.Point(537, 12);
-            this.filterVrsta.Name = "filterVrsta";
-            this.filterVrsta.Size = new System.Drawing.Size(120, 21);
-            this.filterVrsta.TabIndex = 5;
-            this.filterVrsta.SelectedIndexChanged += new System.EventHandler(this.filterVrsta_SelectedIndexChanged);
+            this.cbxFilterVrsta.FormattingEnabled = true;
+            this.cbxFilterVrsta.Location = new System.Drawing.Point(913, 15);
+            this.cbxFilterVrsta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxFilterVrsta.Name = "cbxFilterVrsta";
+            this.cbxFilterVrsta.Size = new System.Drawing.Size(159, 24);
+            this.cbxFilterVrsta.TabIndex = 5;
+            this.cbxFilterVrsta.SelectedIndexChanged += new System.EventHandler(this.filterVrsta_SelectedIndexChanged);
             // 
             // btnFiltriraj
             // 
             this.btnFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFiltriraj.Location = new System.Drawing.Point(663, 9);
+            this.btnFiltriraj.Location = new System.Drawing.Point(1089, 15);
+            this.btnFiltriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiltriraj.Name = "btnFiltriraj";
-            this.btnFiltriraj.Size = new System.Drawing.Size(84, 29);
+            this.btnFiltriraj.Size = new System.Drawing.Size(112, 36);
             this.btnFiltriraj.TabIndex = 6;
             this.btnFiltriraj.Text = "Filtriraj";
             this.btnFiltriraj.UseVisualStyleBackColor = true;
             // 
             // FormaZaPregledZivotinja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1214, 554);
             this.Controls.Add(this.btnFiltriraj);
-            this.Controls.Add(this.filterVrsta);
+            this.Controls.Add(this.cbxFilterVrsta);
             this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnIzmijeni);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dgvZivotinje);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormaZaPregledZivotinja";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormaZaPregledZivotinja_Load);
@@ -138,8 +148,8 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnIzmijeni;
         private System.Windows.Forms.Button btnBrisi;
-        private System.Windows.Forms.ComboBox filterVrsta;
         private System.Windows.Forms.Button btnFiltriraj;
+        private System.Windows.Forms.ComboBox cbxFilterVrsta;
     }
 }
 

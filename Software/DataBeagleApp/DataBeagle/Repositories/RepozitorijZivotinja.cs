@@ -51,7 +51,7 @@ namespace DataBeagle.Repositories
             string ImeZivotinje = reader["Ime_Zivotinje"].ToString();
             DateTime DatumRodjenja = DateTime.Parse(reader["Datum_rodjenja"].ToString());
             DateTime DatumDolaska = DateTime.Parse(reader["Datum_dolaska"].ToString());
-            bool Udomljena = bool.TryParse(reader["Udomljena"].ToString(), out bool udomljena);
+            bool.TryParse(reader["Udomljena"].ToString(), out bool Udomljena);
             DateTime? DatumUdomljenja = null;
             string OibUdomitelja = null;
             Vrsta vrstaZivotinje = RepozitorijVrsta.GetVrsta(int.Parse(reader["ID_vrsta"].ToString()));

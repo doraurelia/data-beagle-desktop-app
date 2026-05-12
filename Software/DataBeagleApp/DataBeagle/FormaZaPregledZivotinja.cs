@@ -33,6 +33,7 @@ namespace DataBeagle
         private void FormaZaPregledZivotinja_Load(object sender, EventArgs e)
         {
             PrikaziZivotinje();
+            cbxFilterVrsta.DataSource = RepozitorijVrsta.GetVrste();
         }
 
         private void PrikaziZivotinje()
@@ -45,6 +46,11 @@ namespace DataBeagle
         {
             FormaUnosIzmjena formaUnosIzmjena = new FormaUnosIzmjena();
             formaUnosIzmjena.ShowDialog();
+        }
+
+        private void dgvZivotinje_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

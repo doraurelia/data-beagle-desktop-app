@@ -62,6 +62,7 @@ namespace DataBeagle
                 "Ne",
                 "Da"
             }; //pazi kod spremanja da se spremi bool ne string
+            cmbxVrsta.DataSource = RepozitorijVrsta.GetVrste();
         }
     }
 }
