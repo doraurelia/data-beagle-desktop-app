@@ -86,7 +86,16 @@ namespace DataBeagle
 
         private void btnUdomljene_Click(object sender, EventArgs e)
         {
-           
+            DateTime pocetak = dtpPocetakFilter.Value;
+            DateTime kraj = dtpKrajFilter.Value;
+            if (pocetak < kraj && kraj <= DateTime.Now)
+            {
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene(pocetak, kraj);
+            }
+            else
+            {
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
+            }
         }
     }
 }
