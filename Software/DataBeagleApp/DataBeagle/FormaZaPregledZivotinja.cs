@@ -83,5 +83,10 @@ namespace DataBeagle
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
             }
         }
+
+        private void btnUdomljene_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

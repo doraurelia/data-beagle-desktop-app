@@ -61,6 +61,22 @@ namespace DataBeagle.Repositories
             return zivotinje;
         }
 
+        public static List<Zivotinja> GetUdomljene(DateTime pocetak, DateTime kraj)
+        {
+            List<Zivotinja> zivotinje = new List<Zivotinja>();
+            string sql = $"SELECT * FROM Zivotinja WHERE Datum_dolaska >= '{pocetak:yyyy-MM-dd}' AND Datum_dolaska <= '{kraj:yyyy-MM-dd}'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Zivotinja zivotinja = CreateObject(reader);
+                zivotinje.Add(zivotinja);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return zivotinje;
+        }
+
         private static Zivotinja CreateObject(SqlDataReader reader)
         {
             int Id = int.Parse(reader["ID_zivotinje"].ToString());
