@@ -38,7 +38,12 @@ namespace DataBeagle
             vrste.Insert(0, new Vrsta { id = 0, naziv = "--- Sve vrste ---" });
             cbxFilterVrsta.DataSource = vrste;
             cbxFilterVrsta.DisplayMember = "naziv"; 
-            cbxFilterVrsta.ValueMember = "id";     
+            cbxFilterVrsta.ValueMember = "id";
+            btnIzvjestaj.Visible = false;
+            dtpPocetak.Visible = false;
+            dtpKraj.Visible = false;
+            lblPocetak.Visible = false;
+            lblKraj.Visible = false;
         }
 
         private void PrikaziZivotinje()
@@ -91,13 +96,29 @@ namespace DataBeagle
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene();
                 lblNaslov.Text = "Udomljene životinje";
                 btnUdomljene.Text = "Sve životinje";
+                btnIzvjestaj.Visible = true;
+                dtpPocetak.Visible = true;
+                dtpKraj.Visible = true;
+                lblPocetak.Visible=true;
+                lblKraj.Visible=true;
             }
             else
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
                 lblNaslov.Text = "Životinje u skloništu";
                 btnUdomljene.Text = "Udomljene životinje";
+                btnIzvjestaj.Visible = false;
+                dtpPocetak.Visible = false;
+                dtpKraj.Visible = false;
+                lblPocetak.Visible = false;
+                lblKraj.Visible = false;
             }
+        }
+
+        private void btnIzvjestaj_Click(object sender, EventArgs e)
+        {
+            FrmIzvjestaj frmIzvjestaj = new FrmIzvjestaj(dtpPocetak.Value, dtpKraj.Value);
+            frmIzvjestaj.ShowDialog();
         }
     }
 }

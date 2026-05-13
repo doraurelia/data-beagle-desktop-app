@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBeagle.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,25 @@ namespace DataBeagle
 {
     public partial class FrmIzvjestaj : Form
     {
-        public FrmIzvjestaj()
+        private DateTime odabraniPocetak;
+        private DateTime odabraniKraj;
+        public FrmIzvjestaj(DateTime pocetak, DateTime kraj)
         {
+            odabraniPocetak = pocetak;
+            odabraniKraj = kraj;
             InitializeComponent();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmIzvjestaj_Load(object sender, EventArgs e)
+        {
+            dgvUdomljene.DataSource = RepozitorijZivotinja.GetUdomljeneFilter(odabraniPocetak, odabraniKraj);
+            lblPocetak.Text=odabraniPocetak.ToString();
+            lblKraj.Text=odabraniKraj.ToString();
         }
     }
 }

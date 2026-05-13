@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUdomljene = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPocetak = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblKraj = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUdomljene)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUdomljene
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1045, 369);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvUdomljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUdomljene.Location = new System.Drawing.Point(28, 69);
+            this.dgvUdomljene.Name = "dgvUdomljene";
+            this.dgvUdomljene.RowTemplate.Height = 24;
+            this.dgvUdomljene.Size = new System.Drawing.Size(1045, 369);
+            this.dgvUdomljene.TabIndex = 0;
             // 
             // label1
             // 
@@ -95,10 +95,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPocetak);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUdomljene);
             this.Name = "FrmIzvjestaj";
             this.Text = "FrmIzvjestaj";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmIzvjestaj_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUdomljene)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUdomljene;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPocetak;
         private System.Windows.Forms.Label label3;

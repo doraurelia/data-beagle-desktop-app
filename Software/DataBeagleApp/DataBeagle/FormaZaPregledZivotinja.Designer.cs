@@ -36,6 +36,11 @@
             this.cbxFilterVrsta = new System.Windows.Forms.ComboBox();
             this.btnFiltriraj = new System.Windows.Forms.Button();
             this.btnUdomljene = new System.Windows.Forms.Button();
+            this.btnIzvjestaj = new System.Windows.Forms.Button();
+            this.dtpPocetak = new System.Windows.Forms.DateTimePicker();
+            this.dtpKraj = new System.Windows.Forms.DateTimePicker();
+            this.lblPocetak = new System.Windows.Forms.Label();
+            this.lblKraj = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,14 +65,14 @@
             this.dgvZivotinje.Name = "dgvZivotinje";
             this.dgvZivotinje.RowHeadersWidth = 51;
             this.dgvZivotinje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvZivotinje.Size = new System.Drawing.Size(1300, 419);
+            this.dgvZivotinje.Size = new System.Drawing.Size(1137, 419);
             this.dgvZivotinje.TabIndex = 1;
             this.dgvZivotinje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZivotinje_CellContentClick);
             // 
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNovo.Location = new System.Drawing.Point(13, 500);
+            this.btnNovo.Location = new System.Drawing.Point(13, 528);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(119, 39);
@@ -79,7 +84,7 @@
             // btnIzmijeni
             // 
             this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIzmijeni.Location = new System.Drawing.Point(139, 500);
+            this.btnIzmijeni.Location = new System.Drawing.Point(139, 528);
             this.btnIzmijeni.Margin = new System.Windows.Forms.Padding(4);
             this.btnIzmijeni.Name = "btnIzmijeni";
             this.btnIzmijeni.Size = new System.Drawing.Size(135, 41);
@@ -91,7 +96,7 @@
             // btnBrisi
             // 
             this.btnBrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBrisi.Location = new System.Drawing.Point(282, 500);
+            this.btnBrisi.Location = new System.Drawing.Point(282, 528);
             this.btnBrisi.Margin = new System.Windows.Forms.Padding(4);
             this.btnBrisi.Name = "btnBrisi";
             this.btnBrisi.Size = new System.Drawing.Size(124, 41);
@@ -102,7 +107,7 @@
             // cbxFilterVrsta
             // 
             this.cbxFilterVrsta.FormattingEnabled = true;
-            this.cbxFilterVrsta.Location = new System.Drawing.Point(1025, 22);
+            this.cbxFilterVrsta.Location = new System.Drawing.Point(862, 22);
             this.cbxFilterVrsta.Margin = new System.Windows.Forms.Padding(4);
             this.cbxFilterVrsta.Name = "cbxFilterVrsta";
             this.cbxFilterVrsta.Size = new System.Drawing.Size(159, 24);
@@ -112,7 +117,7 @@
             // btnFiltriraj
             // 
             this.btnFiltriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFiltriraj.Location = new System.Drawing.Point(1201, 17);
+            this.btnFiltriraj.Location = new System.Drawing.Point(1038, 17);
             this.btnFiltriraj.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltriraj.Name = "btnFiltriraj";
             this.btnFiltriraj.Size = new System.Drawing.Size(112, 36);
@@ -124,7 +129,7 @@
             // btnUdomljene
             // 
             this.btnUdomljene.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUdomljene.Location = new System.Drawing.Point(1069, 503);
+            this.btnUdomljene.Location = new System.Drawing.Point(526, 530);
             this.btnUdomljene.Name = "btnUdomljene";
             this.btnUdomljene.Size = new System.Drawing.Size(244, 39);
             this.btnUdomljene.TabIndex = 7;
@@ -132,11 +137,61 @@
             this.btnUdomljene.UseVisualStyleBackColor = true;
             this.btnUdomljene.Click += new System.EventHandler(this.btnUdomljene_Click);
             // 
+            // btnIzvjestaj
+            // 
+            this.btnIzvjestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestaj.Location = new System.Drawing.Point(776, 530);
+            this.btnIzvjestaj.Name = "btnIzvjestaj";
+            this.btnIzvjestaj.Size = new System.Drawing.Size(131, 39);
+            this.btnIzvjestaj.TabIndex = 8;
+            this.btnIzvjestaj.Text = "Izvještaj";
+            this.btnIzvjestaj.UseVisualStyleBackColor = true;
+            this.btnIzvjestaj.Click += new System.EventHandler(this.btnIzvjestaj_Click);
+            // 
+            // dtpPocetak
+            // 
+            this.dtpPocetak.Location = new System.Drawing.Point(956, 513);
+            this.dtpPocetak.Name = "dtpPocetak";
+            this.dtpPocetak.Size = new System.Drawing.Size(194, 22);
+            this.dtpPocetak.TabIndex = 9;
+            // 
+            // dtpKraj
+            // 
+            this.dtpKraj.Location = new System.Drawing.Point(956, 547);
+            this.dtpKraj.Name = "dtpKraj";
+            this.dtpKraj.Size = new System.Drawing.Size(194, 22);
+            this.dtpKraj.TabIndex = 10;
+            // 
+            // lblPocetak
+            // 
+            this.lblPocetak.AutoSize = true;
+            this.lblPocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPocetak.Location = new System.Drawing.Point(913, 513);
+            this.lblPocetak.Name = "lblPocetak";
+            this.lblPocetak.Size = new System.Drawing.Size(34, 20);
+            this.lblPocetak.TabIndex = 11;
+            this.lblPocetak.Text = "od:";
+            // 
+            // lblKraj
+            // 
+            this.lblKraj.AutoSize = true;
+            this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKraj.Location = new System.Drawing.Point(913, 547);
+            this.lblKraj.Name = "lblKraj";
+            this.lblKraj.Size = new System.Drawing.Size(34, 20);
+            this.lblKraj.TabIndex = 12;
+            this.lblKraj.Text = "do:";
+            // 
             // FormaZaPregledZivotinja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 554);
+            this.ClientSize = new System.Drawing.Size(1174, 576);
+            this.Controls.Add(this.lblKraj);
+            this.Controls.Add(this.lblPocetak);
+            this.Controls.Add(this.dtpKraj);
+            this.Controls.Add(this.dtpPocetak);
+            this.Controls.Add(this.btnIzvjestaj);
             this.Controls.Add(this.btnUdomljene);
             this.Controls.Add(this.btnFiltriraj);
             this.Controls.Add(this.cbxFilterVrsta);
@@ -165,6 +220,11 @@
         private System.Windows.Forms.Button btnFiltriraj;
         private System.Windows.Forms.ComboBox cbxFilterVrsta;
         private System.Windows.Forms.Button btnUdomljene;
+        private System.Windows.Forms.Button btnIzvjestaj;
+        private System.Windows.Forms.DateTimePicker dtpPocetak;
+        private System.Windows.Forms.DateTimePicker dtpKraj;
+        private System.Windows.Forms.Label lblPocetak;
+        private System.Windows.Forms.Label lblKraj;
     }
 }
 
