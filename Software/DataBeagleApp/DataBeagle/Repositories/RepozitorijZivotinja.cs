@@ -61,7 +61,7 @@ namespace DataBeagle.Repositories
             return zivotinje;
         }
 
-        public static List<Zivotinja> GetUdomljene(DateTime pocetak, DateTime kraj)
+        public static List<Zivotinja> GetUdomljeneFilter(DateTime pocetak, DateTime kraj)
         {
             List<Zivotinja> zivotinje = new List<Zivotinja>();
             string sql = $"SELECT * FROM Zivotinja WHERE Datum_dolaska >= '{pocetak:yyyy-MM-dd}' AND Datum_dolaska <= '{kraj:yyyy-MM-dd}'";
