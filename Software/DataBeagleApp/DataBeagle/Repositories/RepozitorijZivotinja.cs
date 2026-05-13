@@ -61,6 +61,22 @@ namespace DataBeagle.Repositories
             return zivotinje;
         }
 
+        public static List<Zivotinja> GetUdomljene()
+        {
+            List<Zivotinja> zivotinje = new List<Zivotinja>();
+            string sql = "SELECT * FROM Zivotinja WHERE Udomljena = 'True'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Zivotinja zivotinja = CreateObject(reader);
+                zivotinje.Add(zivotinja);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return zivotinje;
+        }
+
         public static List<Zivotinja> GetUdomljeneFilter(DateTime pocetak, DateTime kraj)
         {
             List<Zivotinja> zivotinje = new List<Zivotinja>();
