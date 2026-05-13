@@ -98,7 +98,6 @@ namespace DataBeagle
                 lblNaslov.Text = "Životinje u skloništu";
                 btnUdomljene.Text = "Udomljene životinje";
             }
-
         }
     }
 }
