@@ -86,8 +86,19 @@ namespace DataBeagle
 
         private void btnUdomljene_Click(object sender, EventArgs e)
         {
-            frmPrikazUdomljene formaPrikazUdomljene = new frmPrikazUdomljene();
-            formaPrikazUdomljene.ShowDialog();
+            if(btnUdomljene.Text=="Udomljene životinje")
+            {
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene();
+                lblNaslov.Text = "Udomljene životinje";
+                btnUdomljene.Text = "Sve životinje";
+            }
+            else
+            {
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
+                lblNaslov.Text = "Životinje u skloništu";
+                btnUdomljene.Text = "Udomljene životinje";
+            }
+
         }
     }
 }

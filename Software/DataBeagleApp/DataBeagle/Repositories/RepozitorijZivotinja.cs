@@ -96,7 +96,7 @@ namespace DataBeagle.Repositories
         private static Zivotinja CreateObject(SqlDataReader reader)
         {
             int Id = int.Parse(reader["ID_zivotinje"].ToString());
-            string ImeZivotinje = reader["Ime_Zivotinje"].ToString();
+            string ImeZivotinje = reader["Ime_zivotinje"].ToString();
             DateTime DatumRodjenja = DateTime.Parse(reader["Datum_rodjenja"].ToString());
             DateTime DatumDolaska = DateTime.Parse(reader["Datum_dolaska"].ToString());
             bool.TryParse(reader["Udomljena"].ToString(), out bool Udomljena);
