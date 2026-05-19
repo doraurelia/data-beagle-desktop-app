@@ -147,6 +147,16 @@ namespace DataBeagle
                 MessageBox.Show("Početni datum mora biti prije završnog!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnBrisi_Click(object sender, EventArgs e)
+        {
+            if (dgvZivotinje.SelectedRows != null)
+            {
+                var odabranaZivotinja = dgvZivotinje.SelectedRows[0].DataBoundItem as Zivotinja;
+                RepozitorijZivotinja.DeleteZivotinja(odabranaZivotinja.id);
+                PrikaziZivotinje();
+            }
+        }
     }
 }
 

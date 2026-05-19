@@ -51,7 +51,7 @@
             this.lblNaslov.Location = new System.Drawing.Point(16, 18);
             this.lblNaslov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNaslov.Name = "lblNaslov";
-            this.lblNaslov.Size = new System.Drawing.Size(299, 36);
+            this.lblNaslov.Size = new System.Drawing.Size(243, 29);
             this.lblNaslov.TabIndex = 0;
             this.lblNaslov.Text = "Životinje u skloništu";
             // 
@@ -103,6 +103,7 @@
             this.btnBrisi.TabIndex = 4;
             this.btnBrisi.Text = "Obriši";
             this.btnBrisi.UseVisualStyleBackColor = true;
+            this.btnBrisi.Click += new System.EventHandler(this.btnBrisi_Click);
             // 
             // cbxFilterVrsta
             // 
@@ -169,7 +170,7 @@
             this.lblPocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPocetak.Location = new System.Drawing.Point(913, 513);
             this.lblPocetak.Name = "lblPocetak";
-            this.lblPocetak.Size = new System.Drawing.Size(43, 25);
+            this.lblPocetak.Size = new System.Drawing.Size(34, 20);
             this.lblPocetak.TabIndex = 11;
             this.lblPocetak.Text = "od:";
             // 
@@ -179,7 +180,7 @@
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKraj.Location = new System.Drawing.Point(913, 547);
             this.lblKraj.Name = "lblKraj";
-            this.lblKraj.Size = new System.Drawing.Size(43, 25);
+            this.lblKraj.Size = new System.Drawing.Size(34, 20);
             this.lblKraj.TabIndex = 12;
             this.lblKraj.Text = "do:";
             // 

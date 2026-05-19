@@ -159,6 +159,12 @@ namespace DataBeagle.Repositories
             DB.CloseConnection();
         }
 
-       
+        public static void DeleteZivotinja(int id)
+        {
+            string sql = $"DELETE FROM Zivotinja WHERE ID_zivotinje = {id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
