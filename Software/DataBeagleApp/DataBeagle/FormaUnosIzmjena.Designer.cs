@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(282, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ime:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -64,7 +64,7 @@
             this.label2.Location = new System.Drawing.Point(269, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Vrsta:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -76,7 +76,7 @@
             this.label3.Location = new System.Drawing.Point(194, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 25);
+            this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Datum rođenja:";
             // 
@@ -87,7 +87,7 @@
             this.label4.Location = new System.Drawing.Point(101, 194);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(271, 25);
+            this.label4.Size = new System.Drawing.Size(225, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Datum dolaska u sklonište:";
             // 
@@ -98,7 +98,7 @@
             this.label5.Location = new System.Drawing.Point(227, 230);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 25);
+            this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Udomljena:";
             // 
@@ -109,7 +109,7 @@
             this.label6.Location = new System.Drawing.Point(194, 306);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 25);
+            this.label6.Size = new System.Drawing.Size(132, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "OIB udomitelja:";
             // 
@@ -120,7 +120,7 @@
             this.label7.Location = new System.Drawing.Point(168, 271);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 25);
+            this.label7.Size = new System.Drawing.Size(158, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = "Datum udomljenja:";
             // 
@@ -178,6 +178,7 @@
             // 
             // btnSpremi
             // 
+            this.btnSpremi.BackColor = System.Drawing.Color.Violet;
             this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.Location = new System.Drawing.Point(859, 468);
             this.btnSpremi.Margin = new System.Windows.Forms.Padding(4);
@@ -185,7 +186,7 @@
             this.btnSpremi.Size = new System.Drawing.Size(144, 44);
             this.btnSpremi.TabIndex = 16;
             this.btnSpremi.Text = "Spremi->";
-            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.UseVisualStyleBackColor = false;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // txtUdomitelj
@@ -200,6 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.txtUdomitelj);
             this.Controls.Add(this.btnSpremi);
