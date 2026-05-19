@@ -122,5 +122,21 @@ namespace DataBeagle.Repositories
             };
             return zivotinja;
         }
+
+        public static void InsertZivotinja (Zivotinja zivotinja)
+        {
+            string sql = $"INSERT INTO Zivotinja (Ime_zivotinje, Datum_rodjenja, Datum_dolaska, Udomljena, Datum_udomljenja, ID_vrsta, OIB_udomitelj) VALUES ({zivotinja.ime}, {zivotinja.datumRodjenja}, {zivotinja.datumDolaska}, {zivotinja.udomljena}, {zivotinja.datumUdomljenja}, {zivotinja.vrsta.id}, {zivotinja.oibUdomitelj})";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
+        public static void UpdateZivotinja(Zivotinja zivotinja)
+        {
+            string sql = $"UPDATE Zivotinja SET Ime_zivotinje = {zivotinja.ime}, Datum_rodjenja = {zivotinja.datumRodjenja}, Datum_dolaska = {zivotinja.datumDolaska}, Udomljena = {zivotinja.udomljena}, Datum_udomljenja = {zivotinja.datumUdomljenja}, ID_vrsta = {zivotinja.vrsta.id}, OIB_udomitelj = {zivotinja.oibUdomitelj} WHERE ID_zivotinje = {zivotinja.id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }

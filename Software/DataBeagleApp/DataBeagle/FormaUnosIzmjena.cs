@@ -60,20 +60,41 @@ namespace DataBeagle
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if (dtpDatumDolaska.Value < dtpDatumRodjenja.Value ||
-                dtpDatumDolaska.Value > dtpDatumUdomljenja.Value ||
-                dtpDatumUdomljenja.Value < dtpDatumRodjenja.Value //provjeri još da ako je udomljena budu uneseni i datum i udomitelj
-                )
+            if (dtpDatumDolaska.Value < dtpDatumRodjenja.Value)
             {
-                //ne dopusti unos
+                //greška kod datuma
+                return;
+            }
+            else if (txtIme.Text == null || txtIme.Text == " ") {
+                MessageBox.Show("Ime životinje je obavezno!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbxUdomljena.SelectedItem.ToString() == "Da")
+            {
+                if (txtUdomitelj.Text == null || txtUdomitelj.Text == " ")
+                {
+                    MessageBox.Show("Ako je životinja udomljena, morate unijeti OIB udomitelja!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if(dtpDatumUdomljenja.Value < dtpDatumRodjenja.Value || dtpDatumUdomljenja.Value < dtpDatumDolaska.Value)
+                {
+                    MessageBox.Show("Unesite valjane datume, datum udomljenja mora biti nakon datuma dolaska i rođenja!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
             else
             {
-                //spremi podatke u bazu
-                //osvježi formu za pregled
+                if (zivotinja == null)
+                {
+                    zivotinja = new Zivotinja(); 
+                }
+            }
+            
+            
+                
             }
 
-        }
+
 
         private void cmbxUdomitelj_SelectedIndexChanged(object sender, EventArgs e)
         {

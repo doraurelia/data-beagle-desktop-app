@@ -128,7 +128,10 @@ namespace DataBeagle
                 FrmIzvjestaj frmIzvjestaj = new FrmIzvjestaj(dtpPocetak.Value, dtpKraj.Value);
                 frmIzvjestaj.ShowDialog();
             }
-            
+            else
+            {
+                MessageBox.Show("Početni datum mora biti prije završnog!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
