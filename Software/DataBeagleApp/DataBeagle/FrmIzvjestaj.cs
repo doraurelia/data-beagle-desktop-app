@@ -30,8 +30,9 @@ namespace DataBeagle
         private void FrmIzvjestaj_Load(object sender, EventArgs e)
         {
             dgvUdomljene.DataSource = RepozitorijZivotinja.GetUdomljeneFilter(odabraniPocetak, odabraniKraj);
-            lblPocetak.Text = odabraniPocetak.ToString();
-            lblKraj.Text = odabraniKraj.ToString();
+            lblPocetak.Text = odabraniPocetak.ToShortDateString();
+            lblKraj.Text = odabraniKraj.ToShortDateString();
+            dgvUdomljene.ReadOnly = true;
         }
     }
 }

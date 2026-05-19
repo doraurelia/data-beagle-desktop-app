@@ -44,6 +44,7 @@ namespace DataBeagle
             dtpKraj.Visible = false;
             lblPocetak.Visible = false;
             lblKraj.Visible = false;
+            dgvZivotinje.ReadOnly=true;
         }
 
         private void PrikaziZivotinje()
@@ -99,8 +100,10 @@ namespace DataBeagle
                 btnIzvjestaj.Visible = true;
                 dtpPocetak.Visible = true;
                 dtpKraj.Visible = true;
-                lblPocetak.Visible=true;
-                lblKraj.Visible=true;
+                lblPocetak.Visible = true;
+                lblKraj.Visible = true;
+                btnFiltriraj.Visible = false;
+                cbxFilterVrsta.Visible = false;
             }
             else
             {
@@ -112,24 +115,21 @@ namespace DataBeagle
                 dtpKraj.Visible = false;
                 lblPocetak.Visible = false;
                 lblKraj.Visible = false;
+                btnFiltriraj.Visible = true;
+                cbxFilterVrsta.Visible = true;
             }
         }
 
         private void btnIzvjestaj_Click(object sender, EventArgs e)
         {
-            FrmIzvjestaj frmIzvjestaj = new FrmIzvjestaj(dtpPocetak.Value, dtpKraj.Value);
-            frmIzvjestaj.ShowDialog();
+            if(dtpPocetak.Value <= dtpKraj.Value)
+            {
+                FrmIzvjestaj frmIzvjestaj = new FrmIzvjestaj(dtpPocetak.Value, dtpKraj.Value);
+                frmIzvjestaj.ShowDialog();
+            }
+            
         }
     }
 }
 
-/*DateTime pocetak = dtpPocetakFilter.Value;
-        DateTime kraj = dtpKrajFilter.Value;
-            if (pocetak<kraj && kraj <= DateTime.Now)
-            {
-                dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene(pocetak, kraj);
-            }
-            else
-            {
-                dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
-            }*/
+

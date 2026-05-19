@@ -41,6 +41,7 @@
             this.dgvUdomljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUdomljene.Location = new System.Drawing.Point(28, 69);
             this.dgvUdomljene.Name = "dgvUdomljene";
+            this.dgvUdomljene.RowHeadersWidth = 51;
             this.dgvUdomljene.RowTemplate.Height = 24;
             this.dgvUdomljene.Size = new System.Drawing.Size(1045, 369);
             this.dgvUdomljene.TabIndex = 0;
@@ -51,7 +52,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(27, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 24);
+            this.label1.Size = new System.Drawing.Size(589, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Izvještaj o udomljenim životinjama u razdoblju od ";
             // 
@@ -59,9 +60,9 @@
             // 
             this.lblPocetak.AutoSize = true;
             this.lblPocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPocetak.Location = new System.Drawing.Point(492, 13);
+            this.lblPocetak.Location = new System.Drawing.Point(634, 13);
             this.lblPocetak.Name = "lblPocetak";
-            this.lblPocetak.Size = new System.Drawing.Size(134, 24);
+            this.lblPocetak.Size = new System.Drawing.Size(166, 29);
             this.lblPocetak.TabIndex = 2;
             this.lblPocetak.Text = "dd.mm.gggg.";
             // 
@@ -69,9 +70,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(625, 13);
+            this.label3.Location = new System.Drawing.Point(832, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 24);
+            this.label3.Size = new System.Drawing.Size(43, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "do";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -80,9 +81,9 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(658, 13);
+            this.lblKraj.Location = new System.Drawing.Point(920, 13);
             this.lblKraj.Name = "lblKraj";
-            this.lblKraj.Size = new System.Drawing.Size(134, 24);
+            this.lblKraj.Size = new System.Drawing.Size(166, 29);
             this.lblKraj.TabIndex = 4;
             this.lblKraj.Text = "dd.mm.gggg.";
             // 
