@@ -60,34 +60,82 @@ namespace DataBeagle
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            if (dtpDatumDolaska.Value < dtpDatumRodjenja.Value)
+            string ime = txtIme.Text;
+
+            DateTime rodjenje = dtpDatumRodjenja.Value;
+            DateTime dolazak = dtpDatumDolaska.Value;
+
+            bool udomljena;
+            DateTime? udomljenje = null;
+            string udomitelj = null;
+
+            if (cmbxUdomljena.SelectedValue.ToString() == "Da")
             {
-                //greška kod datuma
-                return;
-            }
-            else if (txtIme.Text == null || txtIme.Text == " ") {
-                MessageBox.Show("Ime životinje je obavezno!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (cmbxUdomljena.SelectedItem.ToString() == "Da")
-            {
-                if (txtUdomitelj.Text == null || txtUdomitelj.Text == " ")
-                {
-                    MessageBox.Show("Ako je životinja udomljena, morate unijeti OIB udomitelja!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if(dtpDatumUdomljenja.Value < dtpDatumRodjenja.Value || dtpDatumUdomljenja.Value < dtpDatumDolaska.Value)
+                udomljena = true;
+                //zbog datetimepickera datum svakako postoji pa se ne mora provjeravati null
+                if (dtpDatumUdomljenja.Value < rodjenje || dtpDatumUdomljenja.Value < dolazak)
                 {
                     MessageBox.Show("Unesite valjane datume, datum udomljenja mora biti nakon datuma dolaska i rođenja!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                else udomljenje = dtpDatumUdomljenja.Value;
+
+                if(txtUdomitelj.Text == null || txtUdomitelj.Text == "")
+                {
+                    MessageBox.Show("Ako je životinja udomljena, obvezno unesite OIB udomitelja!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else udomitelj = txtUdomitelj.Text;
+            }
+            else
+            {
+                udomljena = false;
+            }
+
+            if (ime == null || ime == "")
+            {
+                MessageBox.Show("Ime životinje je obavezno!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if(dolazak < rodjenje)
+            {
+                MessageBox.Show("Datum dolaska ne može biti prije datuma rođenja životinje!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
                 if (zivotinja == null)
                 {
-                    zivotinja = new Zivotinja(); 
+                    zivotinja = new Zivotinja()
+                    {
+                        id = 0,
+                        ime = ime,
+                        datumRodjenja = rodjenje,
+                        datumDolaska = dolazak,
+                        vrsta = cmbxVrsta.SelectedItem as Vrsta,
+                        udomljena = udomljena,
+                        datumUdomljenja = udomljenje,
+                        oibUdomitelj = udomitelj,
+                    }; 
+
+                    RepozitorijZivotinja.InsertZivotinja(zivotinja);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
+                else
+                {
+                    zivotinja.ime = ime;
+                    zivotinja.vrsta = cmbxVrsta.SelectedItem as Vrsta;
+                    zivotinja.udomljena = udomljena;
+                    zivotinja.datumRodjenja = rodjenje;
+                    zivotinja.datumDolaska = dolazak;
+                    zivotinja.datumUdomljenja = udomljenje;
+                    zivotinja.oibUdomitelj = udomitelj;
+
+                    RepozitorijZivotinja.UpdateZivotinja(zivotinja);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }                
             }
             
             

@@ -125,7 +125,17 @@ namespace DataBeagle.Repositories
 
         public static void InsertZivotinja (Zivotinja zivotinja)
         {
-            string sql = $"INSERT INTO Zivotinja (Ime_zivotinje, Datum_rodjenja, Datum_dolaska, Udomljena, Datum_udomljenja, ID_vrsta, OIB_udomitelj) VALUES ({zivotinja.ime}, {zivotinja.datumRodjenja}, {zivotinja.datumDolaska}, {zivotinja.udomljena}, {zivotinja.datumUdomljenja}, {zivotinja.vrsta.id}, {zivotinja.oibUdomitelj})";
+            int udomljenaSql = zivotinja.udomljena ? 1 : 0;
+            string sql;
+            if (udomljenaSql == 1)
+            {
+                sql = $"INSERT INTO Zivotinja (Ime_zivotinje, Datum_rodjenja, Datum_dolaska, Udomljena, Datum_udomljenja, ID_vrsta, OIB_udomitelj) VALUES ('{zivotinja.ime}', '{zivotinja.datumRodjenja:yyyy-MM-dd}', '{zivotinja.datumDolaska:yyyy-MM-dd}', {udomljenaSql}, '{zivotinja.datumUdomljenja:yyyy-MM-dd}', {zivotinja.vrsta.id}, '{zivotinja.oibUdomitelj}')";
+            }
+            else
+            {
+                sql = $"INSERT INTO Zivotinja (Ime_zivotinje, Datum_rodjenja, Datum_dolaska, Udomljena, Datum_udomljenja, ID_vrsta, OIB_udomitelj) VALUES ('{zivotinja.ime}', '{zivotinja.datumRodjenja:yyyy-MM-dd}', '{zivotinja.datumDolaska:yyyy-MM-dd}', {udomljenaSql}, NULL, {zivotinja.vrsta.id}, NULL)";
+
+            }
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
@@ -133,10 +143,22 @@ namespace DataBeagle.Repositories
 
         public static void UpdateZivotinja(Zivotinja zivotinja)
         {
-            string sql = $"UPDATE Zivotinja SET Ime_zivotinje = {zivotinja.ime}, Datum_rodjenja = {zivotinja.datumRodjenja}, Datum_dolaska = {zivotinja.datumDolaska}, Udomljena = {zivotinja.udomljena}, Datum_udomljenja = {zivotinja.datumUdomljenja}, ID_vrsta = {zivotinja.vrsta.id}, OIB_udomitelj = {zivotinja.oibUdomitelj} WHERE ID_zivotinje = {zivotinja.id}";
+            int udomljenaSql = zivotinja.udomljena ? 1 : 0;
+            string sql;
+            if (zivotinja.udomljena)
+            {
+                sql = $"UPDATE Zivotinja SET Ime_zivotinje = '{zivotinja.ime}', Datum_rodjenja = '{zivotinja.datumRodjenja:yyyy-MM-dd}', Datum_dolaska = '{zivotinja.datumDolaska:yyyy-MM-dd}', Udomljena = {udomljenaSql}, Datum_udomljenja = '{zivotinja.datumUdomljenja:yyyy-MM-dd}', ID_vrsta = {zivotinja.vrsta.id}, OIB_udomitelj = '{zivotinja.oibUdomitelj}' WHERE ID_zivotinje = {zivotinja.id}";
+                //omogućena promjena svega da se može ispraviti u slučaju pogrešnog unosa 
+            }
+            else
+            {
+                sql = $"UPDATE Zivotinja SET Ime_zivotinje = '{zivotinja.ime}', Datum_rodjenja = '{zivotinja.datumRodjenja:yyyy-MM-dd}', Datum_dolaska = '{zivotinja.datumDolaska:yyyy-MM-dd}', ID_vrsta = {zivotinja.vrsta.id} WHERE ID_zivotinje = {zivotinja.id}";
+            }
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
         }
+
+       
     }
 }

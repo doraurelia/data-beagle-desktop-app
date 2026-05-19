@@ -27,7 +27,10 @@ namespace DataBeagle
         private void btnNovo_Click(object sender, EventArgs e)
         {
             FormaUnosIzmjena formaUnosIzmjena = new FormaUnosIzmjena();
-            formaUnosIzmjena.ShowDialog();
+            if (formaUnosIzmjena.ShowDialog() == DialogResult.OK)
+            {
+                PrikaziZivotinje();
+            }
         }
 
         private void FormaZaPregledZivotinja_Load(object sender, EventArgs e)
@@ -52,6 +55,14 @@ namespace DataBeagle
         {
             List<Zivotinja> zivotinje = RepozitorijZivotinja.GetZivotinje();
             dgvZivotinje.DataSource= zivotinje;
+            dgvZivotinje.Columns[0].HeaderText = "ID";
+            dgvZivotinje.Columns[1].HeaderText = "Ime";
+            dgvZivotinje.Columns[2].HeaderText = "Vrsta";
+            dgvZivotinje.Columns[3].HeaderText = "Udomljena";
+            dgvZivotinje.Columns[4].HeaderText = "Datum rođenja";
+            dgvZivotinje.Columns[5].HeaderText = "Datum dolaska";
+            dgvZivotinje.Columns[6].HeaderText = "Datum udomljenja";
+            dgvZivotinje.Columns[7].HeaderText = "OIB Udomitelja";
         }
 
         private void btnIzmijeni_Click(object sender, EventArgs e)
@@ -59,7 +70,10 @@ namespace DataBeagle
             if (dgvZivotinje.SelectedRows != null) {
                 var odabranaZivotinja = dgvZivotinje.SelectedRows[0].DataBoundItem as Zivotinja;
                 FormaUnosIzmjena formaUnosIzmjena = new FormaUnosIzmjena(odabranaZivotinja);
-                formaUnosIzmjena.ShowDialog(); 
+                if (formaUnosIzmjena.ShowDialog() == DialogResult.OK)
+                {
+                    PrikaziZivotinje();
+                }
             }
         
         
