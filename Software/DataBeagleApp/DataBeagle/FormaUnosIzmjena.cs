@@ -18,19 +18,39 @@ namespace DataBeagle
         public FormaUnosIzmjena()
         {
             InitializeComponent();
+            cmbxVrsta.DataSource = RepozitorijVrsta.GetVrste();
+            cmbxVrsta.DisplayMember = "Naziv";
+            cmbxVrsta.ValueMember = "id";
+            cmbxUdomljena.DataSource = new List<string> 
+            { 
+                "Ne", 
+                "Da" 
+            };
         }
 
-        public FormaUnosIzmjena(Zivotinja odabranaZivotinja)
+        public FormaUnosIzmjena(Zivotinja odabranaZivotinja) : this() 
         {
-            InitializeComponent();
-            zivotinja= odabranaZivotinja;
+            zivotinja = odabranaZivotinja;
+
+            if (zivotinja == null) return;
+
             txtIme.Text = zivotinja.ime;
-            cmbxUdomljena.DisplayMember = zivotinja.udomljena ? "Da" : "Ne";
-            txtUdomitelj.Text = zivotinja.oibUdomitelj;
             dtpDatumDolaska.Value = zivotinja.datumDolaska;
             dtpDatumRodjenja.Value = zivotinja.datumRodjenja;
-            //trebam stavit datum udomljenja kao tekst bolje?
-            
+            if (zivotinja.vrsta != null) cmbxVrsta.SelectedValue = zivotinja.vrsta.id;
+            cmbxUdomljena.SelectedItem = zivotinja.udomljena ? "Da" : "Ne";
+
+            if (zivotinja.udomljena)
+            {
+                txtUdomitelj.Text = zivotinja.oibUdomitelj;
+                dtpDatumUdomljenja.Value = zivotinja.datumUdomljenja.Value;
+               
+            }
+            else
+            {
+                txtUdomitelj.Text = "";
+                dtpDatumUdomljenja.Value = DateTime.Now; 
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -72,12 +92,7 @@ namespace DataBeagle
 
         private void FormaUnosIzmjena_Load(object sender, EventArgs e)
         {
-            cmbxUdomljena.DataSource = new List<string>
-            {
-                "Ne",
-                "Da"
-            }; //pazi kod spremanja da se spremi bool ne string
-            cmbxVrsta.DataSource = RepozitorijVrsta.GetVrste();
+            
         }
     }
 }

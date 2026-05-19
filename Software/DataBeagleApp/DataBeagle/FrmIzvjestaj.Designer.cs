@@ -43,7 +43,7 @@
             this.dgvUdomljene.Name = "dgvUdomljene";
             this.dgvUdomljene.RowHeadersWidth = 51;
             this.dgvUdomljene.RowTemplate.Height = 24;
-            this.dgvUdomljene.Size = new System.Drawing.Size(1045, 369);
+            this.dgvUdomljene.Size = new System.Drawing.Size(1140, 482);
             this.dgvUdomljene.TabIndex = 0;
             // 
             // label1
@@ -60,7 +60,7 @@
             // 
             this.lblPocetak.AutoSize = true;
             this.lblPocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPocetak.Location = new System.Drawing.Point(634, 13);
+            this.lblPocetak.Location = new System.Drawing.Point(645, 13);
             this.lblPocetak.Name = "lblPocetak";
             this.lblPocetak.Size = new System.Drawing.Size(166, 29);
             this.lblPocetak.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(832, 13);
+            this.label3.Location = new System.Drawing.Point(785, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 29);
             this.label3.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(920, 13);
+            this.lblKraj.Location = new System.Drawing.Point(834, 13);
             this.lblKraj.Name = "lblKraj";
             this.lblKraj.Size = new System.Drawing.Size(166, 29);
             this.lblKraj.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 450);
+            this.ClientSize = new System.Drawing.Size(1198, 577);
             this.Controls.Add(this.lblKraj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPocetak);

@@ -45,6 +45,7 @@ namespace DataBeagle
             lblPocetak.Visible = false;
             lblKraj.Visible = false;
             dgvZivotinje.ReadOnly=true;
+            dtpPocetak.Value = DateTime.Parse("1.1.2018.");
         }
 
         private void PrikaziZivotinje()

@@ -80,7 +80,7 @@ namespace DataBeagle.Repositories
         public static List<Zivotinja> GetUdomljeneFilter(DateTime pocetak, DateTime kraj)
         {
             List<Zivotinja> zivotinje = new List<Zivotinja>();
-            string sql = $"SELECT * FROM Zivotinja WHERE Datum_dolaska >= '{pocetak:yyyy-MM-dd}' AND Datum_dolaska <= '{kraj:yyyy-MM-dd}'";
+            string sql = $"SELECT * FROM Zivotinja WHERE Datum_dolaska >= '{pocetak:yyyy-MM-dd}' AND Datum_dolaska <= '{kraj:yyyy-MM-dd}' AND Udomljena = 'True'";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
             while (reader.Read())
@@ -118,6 +118,7 @@ namespace DataBeagle.Repositories
                 datumDolaska = DatumDolaska,
                 datumRodjenja = DatumRodjenja,
                 datumUdomljenja = DatumUdomljenja,
+                oibUdomitelj = OibUdomitelja
             };
             return zivotinja;
         }
