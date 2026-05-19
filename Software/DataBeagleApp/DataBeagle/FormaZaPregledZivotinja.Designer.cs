@@ -41,6 +41,8 @@
             this.dtpKraj = new System.Windows.Forms.DateTimePicker();
             this.lblPocetak = new System.Windows.Forms.Label();
             this.lblKraj = new System.Windows.Forms.Label();
+            this.txtPretrazi = new System.Windows.Forms.TextBox();
+            this.btnPretrazi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +186,33 @@
             this.lblKraj.TabIndex = 12;
             this.lblKraj.Text = "do:";
             // 
+            // txtPretrazi
+            // 
+            this.txtPretrazi.Location = new System.Drawing.Point(526, 22);
+            this.txtPretrazi.Name = "txtPretrazi";
+            this.txtPretrazi.Size = new System.Drawing.Size(163, 22);
+            this.txtPretrazi.TabIndex = 13;
+            this.txtPretrazi.Text = "ime";
+            this.txtPretrazi.TextChanged += new System.EventHandler(this.txtPretrazi_TextChanged);
+            // 
+            // btnPretrazi
+            // 
+            this.btnPretrazi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPretrazi.Location = new System.Drawing.Point(708, 17);
+            this.btnPretrazi.Name = "btnPretrazi";
+            this.btnPretrazi.Size = new System.Drawing.Size(112, 36);
+            this.btnPretrazi.TabIndex = 14;
+            this.btnPretrazi.Text = "Pretraži";
+            this.btnPretrazi.UseVisualStyleBackColor = true;
+            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
+            // 
             // FormaZaPregledZivotinja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 576);
+            this.Controls.Add(this.btnPretrazi);
+            this.Controls.Add(this.txtPretrazi);
             this.Controls.Add(this.lblKraj);
             this.Controls.Add(this.lblPocetak);
             this.Controls.Add(this.dtpKraj);
@@ -204,7 +228,7 @@
             this.Controls.Add(this.lblNaslov);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormaZaPregledZivotinja";
-            this.Text = "Form1";
+            this.Text = "Pregled životinja";
             this.Load += new System.EventHandler(this.FormaZaPregledZivotinja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZivotinje)).EndInit();
             this.ResumeLayout(false);
@@ -227,6 +251,8 @@
         private System.Windows.Forms.DateTimePicker dtpKraj;
         private System.Windows.Forms.Label lblPocetak;
         private System.Windows.Forms.Label lblKraj;
+        private System.Windows.Forms.TextBox txtPretrazi;
+        private System.Windows.Forms.Button btnPretrazi;
     }
 }
 

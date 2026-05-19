@@ -49,6 +49,7 @@ namespace DataBeagle
             lblKraj.Visible = false;
             dgvZivotinje.ReadOnly=true;
             dtpPocetak.Value = DateTime.Parse("1.1.2018.");
+            btnUdomljene.Text = "Udomljene";
         }
 
         private void PrikaziZivotinje()
@@ -107,7 +108,7 @@ namespace DataBeagle
 
         private void btnUdomljene_Click(object sender, EventArgs e)
         {
-            if(btnUdomljene.Text=="Udomljene životinje")
+            if(btnUdomljene.Text=="Udomljene")
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene();
                 lblNaslov.Text = "Udomljene životinje";
@@ -124,7 +125,7 @@ namespace DataBeagle
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
                 lblNaslov.Text = "Životinje u skloništu";
-                btnUdomljene.Text = "Udomljene životinje";
+                btnUdomljene.Text = "Udomljene";
                 btnIzvjestaj.Visible = false;
                 dtpPocetak.Visible = false;
                 dtpKraj.Visible = false;
@@ -156,6 +157,30 @@ namespace DataBeagle
                 RepozitorijZivotinja.DeleteZivotinja(odabranaZivotinja.id);
                 PrikaziZivotinje();
             }
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            string unos = txtPretrazi.Text;
+            if(unos != null && unos != "")
+            {
+                dgvZivotinje.DataSource = new List<Zivotinja> 
+                { 
+                    RepozitorijZivotinja.GetZivotinja(unos) 
+                };
+                btnIzvjestaj.Visible = false;
+                btnUdomljene.Text = "Sve životinje";
+            }
+            else
+            {
+                if(!btnIzvjestaj.Visible) btnUdomljene.Text = "Udomljene";
+                PrikaziZivotinje();
+            }
+        }
+
+        private void txtPretrazi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

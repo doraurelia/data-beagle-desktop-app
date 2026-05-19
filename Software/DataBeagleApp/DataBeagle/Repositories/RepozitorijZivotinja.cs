@@ -26,6 +26,22 @@ namespace DataBeagle.Repositories
             DB.CloseConnection();
             return zivotinja;
         }
+
+        public static Zivotinja GetZivotinja(string ime)
+        {
+            Zivotinja zivotinja = null;
+            string sql = $"SELECT * FROM dbo.Zivotinja WHERE Ime_zivotinje = '{ime}'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                zivotinja = CreateObject(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return zivotinja;
+        }
         public static List<Zivotinja> GetZivotinje()
         {
             List<Zivotinja> zivotinje = new List<Zivotinja>();
