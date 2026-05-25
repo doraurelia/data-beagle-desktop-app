@@ -64,7 +64,23 @@ namespace DataBeagle
             dgvZivotinje.Columns[5].HeaderText = "Datum dolaska";
             dgvZivotinje.Columns[6].HeaderText = "Datum udomljenja";
             dgvZivotinje.Columns[7].HeaderText = "OIB Udomitelja";
+            PrilagodiVisinuTablice();
         }
+
+        private void PrilagodiVisinuTablice()
+        {
+            int ukupnaVisina = dgvZivotinje.ColumnHeadersHeight;
+            foreach (DataGridViewRow row in dgvZivotinje.Rows)
+            {
+                if (row.Visible)
+                {
+                    ukupnaVisina += row.Height;
+                }
+            }
+            ukupnaVisina += (dgvZivotinje.BorderStyle == BorderStyle.None) ? 2 : 4;
+            dgvZivotinje.Height = ukupnaVisina < 350 ? ukupnaVisina : 350;
+        }
+
 
         private void btnIzmijeni_Click(object sender, EventArgs e)
         {
@@ -104,6 +120,7 @@ namespace DataBeagle
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
             }
+            PrilagodiVisinuTablice();
         }
 
         private void btnUdomljene_Click(object sender, EventArgs e)
@@ -111,6 +128,7 @@ namespace DataBeagle
             if(btnUdomljene.Text=="Udomljene")
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetUdomljene();
+                PrilagodiVisinuTablice();
                 lblNaslov.Text = "Udomljene životinje";
                 btnUdomljene.Text = "Sve životinje";
                 btnIzvjestaj.Visible = true;
@@ -124,6 +142,7 @@ namespace DataBeagle
             else
             {
                 dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje();
+                PrilagodiVisinuTablice();
                 lblNaslov.Text = "Životinje u skloništu";
                 btnUdomljene.Text = "Udomljene";
                 btnIzvjestaj.Visible = false;
@@ -164,18 +183,21 @@ namespace DataBeagle
             string unos = txtPretrazi.Text;
             if(unos != null && unos != "")
             {
-                dgvZivotinje.DataSource = new List<Zivotinja> 
-                { 
-                    RepozitorijZivotinja.GetZivotinja(unos) 
+                dgvZivotinje.DataSource = new List<Zivotinja>
+                {
+                    RepozitorijZivotinja.GetZivotinja(unos)
                 };
                 btnIzvjestaj.Visible = false;
                 btnUdomljene.Text = "Sve životinje";
+                btnFiltriraj.Visible = false;
+                cbxFilterVrsta.Visible = false;
             }
             else
             {
                 if(!btnIzvjestaj.Visible) btnUdomljene.Text = "Udomljene";
                 PrikaziZivotinje();
             }
+            PrilagodiVisinuTablice();
         }
 
         private void txtPretrazi_TextChanged(object sender, EventArgs e)

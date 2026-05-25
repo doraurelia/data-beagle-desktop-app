@@ -42,22 +42,25 @@
             this.dgvUdomljene.AllowUserToDeleteRows = false;
             this.dgvUdomljene.BackgroundColor = System.Drawing.Color.Thistle;
             this.dgvUdomljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUdomljene.Location = new System.Drawing.Point(28, 69);
-            this.dgvUdomljene.MaximumSize = new System.Drawing.Size(1200, 480);
-            this.dgvUdomljene.MinimumSize = new System.Drawing.Size(1125, 80);
+            this.dgvUdomljene.Location = new System.Drawing.Point(21, 56);
+            this.dgvUdomljene.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUdomljene.MaximumSize = new System.Drawing.Size(900, 390);
+            this.dgvUdomljene.MinimumSize = new System.Drawing.Size(844, 65);
             this.dgvUdomljene.MultiSelect = false;
             this.dgvUdomljene.Name = "dgvUdomljene";
             this.dgvUdomljene.ReadOnly = true;
             this.dgvUdomljene.RowHeadersWidth = 51;
             this.dgvUdomljene.RowTemplate.Height = 24;
-            this.dgvUdomljene.Size = new System.Drawing.Size(1140, 480);
+            this.dgvUdomljene.Size = new System.Drawing.Size(855, 390);
             this.dgvUdomljene.TabIndex = 0;
+            this.dgvUdomljene.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUdomljene_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(27, 13);
+            this.label1.Location = new System.Drawing.Point(20, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(471, 24);
             this.label1.TabIndex = 1;
@@ -67,7 +70,8 @@
             // 
             this.lblPocetak.AutoSize = true;
             this.lblPocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPocetak.Location = new System.Drawing.Point(645, 13);
+            this.lblPocetak.Location = new System.Drawing.Point(484, 11);
+            this.lblPocetak.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPocetak.Name = "lblPocetak";
             this.lblPocetak.Size = new System.Drawing.Size(134, 24);
             this.lblPocetak.TabIndex = 2;
@@ -77,7 +81,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(785, 13);
+            this.label3.Location = new System.Drawing.Point(589, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 24);
             this.label3.TabIndex = 3;
@@ -88,7 +93,8 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(834, 13);
+            this.lblKraj.Location = new System.Drawing.Point(626, 11);
+            this.lblKraj.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKraj.Name = "lblKraj";
             this.lblKraj.Size = new System.Drawing.Size(134, 24);
             this.lblKraj.TabIndex = 4;
@@ -96,15 +102,16 @@
             // 
             // FrmIzvjestaj
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1198, 577);
+            this.ClientSize = new System.Drawing.Size(898, 469);
             this.Controls.Add(this.lblKraj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPocetak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUdomljene);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmIzvjestaj";
             this.Text = "FrmIzvjestaj";
             this.Load += new System.EventHandler(this.FrmIzvjestaj_Load);
