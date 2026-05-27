@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataBeagle.Repositories
 {
@@ -13,49 +14,72 @@ namespace DataBeagle.Repositories
     {
         public static Vrsta GetVrsta(int id)
         {
-            Vrsta vrsta = null;
-            string sql = $"SELECT * FROM dbo.Vrsta WHERE ID_vrste = {id}";
-            DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
-            if (reader.HasRows)
+            try
             {
-                reader.Read();
-                vrsta = CreateObject(reader);
-                reader.Close();
+                Vrsta vrsta = null;
+                string sql = $"SELECT * FROM dbo.Vrsta WHERE ID_vrste = {id}";
+                DB.OpenConnection();
+                var reader = DB.GetDataReader(sql);
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    vrsta = CreateObject(reader);
+                    reader.Close();
+                }
+                DB.CloseConnection();
+                return vrsta;
             }
-            DB.CloseConnection();
-            return vrsta;
+            catch
+            {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
         public static List<Vrsta> GetVrste()
         {
-            List<Vrsta> vrste = new List<Vrsta>();
-            string sql = "SELECT * FROM dbo.Vrsta";
-            DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
-
-            while (reader.Read())
+            try
             {
-                Vrsta vrsta = CreateObject(reader);
-                vrste.Add(vrsta);
+                List<Vrsta> vrste = new List<Vrsta>();
+                string sql = "SELECT * FROM dbo.Vrsta";
+                DB.OpenConnection();
+                var reader = DB.GetDataReader(sql);
+
+                while (reader.Read())
+                {
+                    Vrsta vrsta = CreateObject(reader);
+                    vrste.Add(vrsta);
+                }
+
+                reader.Close();
+                DB.CloseConnection();
+                return vrste;
             }
-
-            reader.Close();
-            DB.CloseConnection();
-            return vrste;
-
+            catch
+            {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
 
         private static Vrsta CreateObject(SqlDataReader reader)
         {
-            int Id = int.Parse(reader["ID_vrste"].ToString());
-            string Naziv = reader["Naziv_vrste"].ToString();
-            
-            var vrsta = new Vrsta
+            try
             {
-                id = Id,
-                naziv = Naziv,
-            };
-            return vrsta;
+                int Id = int.Parse(reader["ID_vrste"].ToString());
+                string Naziv = reader["Naziv_vrste"].ToString();
+
+                var vrsta = new Vrsta
+                {
+                    id = Id,
+                    naziv = Naziv,
+                };
+                return vrsta;
+            }
+            catch
+            {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataBeagle.Repositories
 {
@@ -30,6 +31,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -53,6 +55,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -77,6 +80,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -100,6 +104,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -121,7 +126,10 @@ namespace DataBeagle.Repositories
                 DB.CloseConnection();
                 return zivotinje;
             }
-            catch { return null; }
+            catch {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return null; 
+            }
         }
 
         public static List<Zivotinja> GetUdomljeneFilter(DateTime pocetak, DateTime kraj)
@@ -143,6 +151,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -180,6 +189,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -205,6 +215,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -230,6 +241,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -245,6 +257,7 @@ namespace DataBeagle.Repositories
             }
             catch
             {
+                MessageBox.Show("Greška kod spajanja na bazu", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
