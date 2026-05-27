@@ -53,7 +53,6 @@
             this.dgvUdomljene.RowTemplate.Height = 24;
             this.dgvUdomljene.Size = new System.Drawing.Size(855, 390);
             this.dgvUdomljene.TabIndex = 0;
-            this.dgvUdomljene.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUdomljene_CellContentClick);
             // 
             // label1
             // 
@@ -87,7 +86,6 @@
             this.label3.Size = new System.Drawing.Size(34, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "do";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblKraj
             // 

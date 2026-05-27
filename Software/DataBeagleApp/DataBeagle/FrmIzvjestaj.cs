@@ -23,10 +23,6 @@ namespace DataBeagle
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmIzvjestaj_Load(object sender, EventArgs e)
         {
@@ -66,9 +62,5 @@ namespace DataBeagle
             dgvUdomljene.Height = ukupnaVisina < 350 ? ukupnaVisina : 350;
         }
 
-        private void dgvUdomljene_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

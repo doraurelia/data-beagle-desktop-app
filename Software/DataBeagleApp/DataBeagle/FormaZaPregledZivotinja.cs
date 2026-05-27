@@ -19,10 +19,6 @@ namespace DataBeagle
             InitializeComponent();
         }
 
-        private void filterVrsta_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -99,10 +95,6 @@ namespace DataBeagle
         
         }
 
-        private void dgvZivotinje_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnFiltriraj_Click(object sender, EventArgs e)
         {
@@ -202,10 +194,6 @@ namespace DataBeagle
             PrilagodiVisinuTablice();
         }
 
-        private void txtPretrazi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

@@ -53,10 +53,7 @@ namespace DataBeagle
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
@@ -142,26 +139,5 @@ namespace DataBeagle
                 
             }
 
-
-
-        private void cmbxUdomitelj_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUdomitelj_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormaUnosIzmjena_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

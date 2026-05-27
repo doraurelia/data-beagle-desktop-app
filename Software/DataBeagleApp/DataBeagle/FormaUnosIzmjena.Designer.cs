@@ -55,7 +55,6 @@
             this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ime:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -67,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Vrsta:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -195,7 +193,6 @@
             this.txtUdomitelj.Name = "txtUdomitelj";
             this.txtUdomitelj.Size = new System.Drawing.Size(100, 22);
             this.txtUdomitelj.TabIndex = 17;
-            this.txtUdomitelj.TextChanged += new System.EventHandler(this.txtUdomitelj_TextChanged);
             // 
             // FormaUnosIzmjena
             // 
@@ -221,7 +218,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormaUnosIzmjena";
             this.Text = "FormaUnosIzmjena";
-            this.Load += new System.EventHandler(this.FormaUnosIzmjena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

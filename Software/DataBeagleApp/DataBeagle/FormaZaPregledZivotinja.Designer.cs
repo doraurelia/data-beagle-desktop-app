@@ -74,7 +74,6 @@
             this.dgvZivotinje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvZivotinje.Size = new System.Drawing.Size(1161, 345);
             this.dgvZivotinje.TabIndex = 1;
-            this.dgvZivotinje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZivotinje_CellContentClick);
             // 
             // btnNovo
             // 
@@ -125,7 +124,6 @@
             this.cbxFilterVrsta.Name = "cbxFilterVrsta";
             this.cbxFilterVrsta.Size = new System.Drawing.Size(159, 24);
             this.cbxFilterVrsta.TabIndex = 5;
-            this.cbxFilterVrsta.SelectedIndexChanged += new System.EventHandler(this.filterVrsta_SelectedIndexChanged);
             // 
             // btnFiltriraj
             // 
@@ -211,7 +209,6 @@
             this.txtPretrazi.Size = new System.Drawing.Size(163, 22);
             this.txtPretrazi.TabIndex = 13;
             this.txtPretrazi.Text = "ime";
-            this.txtPretrazi.TextChanged += new System.EventHandler(this.txtPretrazi_TextChanged);
             // 
             // btnPretrazi
             // 
