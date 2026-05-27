@@ -64,6 +64,9 @@ namespace DataBeagle
             dgvZivotinje.Columns[5].HeaderText = "Datum dolaska";
             dgvZivotinje.Columns[6].HeaderText = "Datum udomljenja";
             dgvZivotinje.Columns[7].HeaderText = "OIB Udomitelja";
+            btnFiltriraj.Visible = true;
+            cbxFilterVrsta.Visible = true;
+            if (!btnIzvjestaj.Visible) btnUdomljene.Text = "Udomljene";
             PrilagodiVisinuTablice();
         }
 
