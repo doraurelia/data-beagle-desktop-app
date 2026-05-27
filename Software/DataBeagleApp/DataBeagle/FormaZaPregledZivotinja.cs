@@ -48,7 +48,7 @@ namespace DataBeagle
             lblPocetak.Visible = false;
             lblKraj.Visible = false;
             dgvZivotinje.ReadOnly=true;
-            dtpPocetak.Value = DateTime.Parse("1.1.2018.");
+            dtpPocetak.Value = DateTime.Parse("1.1.2014.");
             btnUdomljene.Text = "Udomljene";
         }
 
@@ -108,7 +108,7 @@ namespace DataBeagle
                 if ((int)cbxFilterVrsta.SelectedValue != 0) 
                 {
                     dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinjeFilter((int)cbxFilterVrsta.SelectedValue);
-                    
+                    btnUdomljene.Text = "Sve životinje";
                 }
                 else
                 {
@@ -152,6 +152,8 @@ namespace DataBeagle
                 lblKraj.Visible = false;
                 btnFiltriraj.Visible = true;
                 cbxFilterVrsta.Visible = true;
+                txtPretrazi.Text = "ime";
+                cbxFilterVrsta.SelectedIndex = 0;
             }
         }
 
@@ -183,10 +185,7 @@ namespace DataBeagle
             string unos = txtPretrazi.Text;
             if(unos != null && unos != "")
             {
-                dgvZivotinje.DataSource = new List<Zivotinja>
-                {
-                    RepozitorijZivotinja.GetZivotinja(unos)
-                };
+                dgvZivotinje.DataSource = RepozitorijZivotinja.GetZivotinje(unos);
                 btnIzvjestaj.Visible = false;
                 btnUdomljene.Text = "Sve životinje";
                 btnFiltriraj.Visible = false;

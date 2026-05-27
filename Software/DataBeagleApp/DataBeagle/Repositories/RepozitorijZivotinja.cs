@@ -27,20 +27,20 @@ namespace DataBeagle.Repositories
             return zivotinja;
         }
 
-        public static Zivotinja GetZivotinja(string ime)
+        public static List<Zivotinja> GetZivotinje(string ime)
         {
-            Zivotinja zivotinja = null;
+            List<Zivotinja> zivotinje = new List<Zivotinja>();
             string sql = $"SELECT * FROM dbo.Zivotinja WHERE Ime_zivotinje = '{ime}'";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
-            if (reader.HasRows)
+            while (reader.Read())
             {
-                reader.Read();
-                zivotinja = CreateObject(reader);
-                reader.Close();
+                Zivotinja zivotinja = CreateObject(reader);
+                zivotinje.Add(zivotinja);
             }
+            reader.Close();
             DB.CloseConnection();
-            return zivotinja;
+            return zivotinje;
         }
         public static List<Zivotinja> GetZivotinje()
         {
