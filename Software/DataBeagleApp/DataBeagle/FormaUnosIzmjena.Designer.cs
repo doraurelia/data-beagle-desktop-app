@@ -218,6 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormaUnosIzmjena";
             this.Text = "FormaUnosIzmjena";
+            this.Load += new System.EventHandler(this.FormaUnosIzmjena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

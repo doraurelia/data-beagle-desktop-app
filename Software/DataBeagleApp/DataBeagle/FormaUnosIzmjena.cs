@@ -139,5 +139,9 @@ namespace DataBeagle
                 
             }
 
+        private void FormaUnosIzmjena_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
