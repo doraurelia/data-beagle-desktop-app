@@ -40,11 +40,11 @@ namespace DataBeagle
             dgvUdomljene.Columns[0].HeaderText = "ID";
             dgvUdomljene.Columns[1].HeaderText = "Ime";
             dgvUdomljene.Columns[2].HeaderText = "Vrsta";
-            dgvUdomljene.Columns[3].HeaderText = "Udomljena";
-            dgvUdomljene.Columns[4].HeaderText = "Datum rođenja";
-            dgvUdomljene.Columns[5].HeaderText = "Datum dolaska";
-            dgvUdomljene.Columns[6].HeaderText = "Datum udomljenja";
-            dgvUdomljene.Columns[7].HeaderText = "OIB Udomitelja";
+            dgvUdomljene.Columns[3].Visible = false;
+            dgvUdomljene.Columns[4].Visible = false;
+            dgvUdomljene.Columns[5].Visible = false;
+            dgvUdomljene.Columns[6].Visible = false;
+            dgvUdomljene.Columns[7].Visible = false;
             PrilagodiVisinuTablice();
         }
 
