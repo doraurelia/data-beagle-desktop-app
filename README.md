@@ -5,7 +5,7 @@
 
 ## O projektu
 Ovaj projekt pokriva proces evolutivnog razvoja softvera za sklonište za životinje, koji će omogućiti rad s podacima o životinjama u skloništu, evidenciju donacija i troškova, evidenciju rada volontera i unos podataka o udomiteljima i udomljavanju.  
-Projekt sadrži detaljnu specifikaciju softverskih zahtjeva, izradu nekoliko vrsta dijagrama prema UML-u te implementaciju ključnih funkcionalnih zahtjeva: manipulaciju podatcima o životinjama te generiranje izvještaja.  
+Projekt u mapi Documentation sadrži detaljnu specifikaciju softverskih zahtjeva i izradu nekoliko vrsta dijagrama prema UML-u, dok sde u mapi Software nalazi implementacija ključnih funkcionalnih zahtjeva: manipulacija podatcima o životinjama te generiranje izvještaja.  
 
 ## Korištene tehnologije
 * **C# .NET** – izrada korisničkog sučelja i backend
